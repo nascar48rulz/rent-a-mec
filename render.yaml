@@ -1,0 +1,22 @@
+# Free deploy on Render: https://dashboard.render.com
+# New → Blueprint → connect this repo (or paste as Infrastructure as Code)
+services:
+  - type: web
+    name: rentamec-demo
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: HTTPS
+        value: "0"
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: RAM_DATA_DIR
+        value: /tmp/rent-a-mec-data
+      - key: RAM_DB_PATH
+        value: /tmp/rent-a-mec-data/rentamec.db
+      # Set after first deploy to your onrender.com URL:
+      # - key: APP_URL
+      #   value: https://rentamec-demo.onrender.com

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rent-a-mec | Rent a Mechanic for Your Car Purchase</title>
+  <meta name="description" content="Rent a certified mechanic to inspect a used car with you and support you through the buying process." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo" data-nav="home">
+        <span class="logo-icon">🔧</span>
+        <span class="logo-text">Rent-a-mec</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#" data-nav="how">How it works</a>
+        <a href="#" data-nav="pricing">Pricing</a>
+        <a href="#" data-nav="mechanics">Find a mechanic</a>
+        <a href="#" data-nav="book" class="btn btn-primary btn-sm" id="navBook">Book now</a>
+        <a href="#" data-nav="dashboard" class="nav-link hidden" id="navDash">My bookings</a>
+        <button class="btn btn-ghost btn-sm hidden" id="navLogout">Log out</button>
+        <button class="btn btn-ghost btn-sm" id="navLogin" data-nav="auth">Log in</button>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="section hero active">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="badge">Production demo · real API + accounts</span>
+          <h1>Don’t buy a lemon.<br />Rent a mechanic.</h1>
+          <p class="hero-lead">
+            Bring a certified automotive specialist with you when you inspect and negotiate a used car.
+            Fair hourly rates, transparent pricing, max 4 hours.
+          </p>
+          <div class="hero-cta">
+            <button class="btn btn-primary btn-lg" data-nav="book">Book a mechanic</button>
+            <button class="btn btn-ghost btn-lg" data-nav="how">See how it works</button>
+          </div>
+          <div class="trust-row">
+            <div class="trust-item"><strong>ASE-style vetted</strong><span>demo specialists</span></div>
+            <div class="trust-item"><strong>$89–$95/hr</strong><span>fair market rates</span></div>
+            <div class="trust-item"><strong>Max 4 hrs</strong><span>focused & efficient</span></div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="price-preview">
+            <h3>Quick price check</h3>
+            <div class="duration-pills" id="heroDuration">
+              <button class="pill active" data-hrs="1">1 hr</button>
+              <button class="pill" data-hrs="2">2 hrs</button>
+              <button class="pill" data-hrs="3">3 hrs</button>
+              <button class="pill" data-hrs="4">4 hrs</button>
+            </div>
+            <div class="price-display">
+              <span class="price-amount" id="heroPrice">$95</span>
+              <span class="price-note" id="heroNote">Standard rate</span>
+            </div>
+            <p class="price-detail" id="heroDetail">Perfect for a focused pre-purchase inspection.</p>
+            <button class="btn btn-primary btn-block" data-nav="book">Continue to book</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section id="how" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>How Rent-a-mec works</h2>
+          <p>From booking to handshake — we’ve got your back at every step.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><h3>Create account & book</h3><p>Sign up as a buyer, choose duration (1–4 hrs), location, and optionally a preferred mechanic.</p></div>
+          <div class="step"><div class="step-num">2</div><h3>Mechanic confirms</h3><p>Specialists see open requests and accept jobs. You get a confirmed booking with details.</p></div>
+          <div class="step"><div class="step-num">3</div><h3>Inspect together</h3><p>Meet at the vehicle. Get a clear assessment of condition, red flags, and estimated repair costs.</p></div>
+          <div class="step"><div class="step-num">4</div><h3>Negotiate with support</h3><p>Use findings as leverage. Your mechanic can stay as a calm presence while you decide.</p></div>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card"><div class="feature-icon">🔍</div><h4>True pre-purchase inspection</h4><p>Undercarriage, engine, OBD, fluids, tires/brakes — explained in plain language.</p></div>
+          <div class="feature-card"><div class="feature-icon">🛡️</div><h4>Buying process support</h4><p>Dealerships and private sellers can feel intimidating. A pro levels the field.</p></div>
+          <div class="feature-card"><div class="feature-icon">⏱️</div><h4>Time-boxed & fair</h4><p>Max 4 hours. Discount on full 4-hour bookings so longer sessions stay affordable.</p></div>
+          <div class="feature-card"><div class="feature-icon">✅</div><h4>Accounts & history</h4><p>Buyers and mechanics have logins. Bookings are tracked end-to-end.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Simple, fair pricing</h2>
+          <p>Hourly rates aligned with real mobile-mechanic market rates.</p>
+        </div>
+        <div class="pricing-table">
+          <div class="pricing-card">
+            <div class="pricing-label">Standard</div>
+            <div class="pricing-rate">$95<span>/hour</span></div>
+            <ul>
+              <li>1–3 hour bookings</li>
+              <li>Full inspection + support</li>
+              <li>Travel within service area*</li>
+              <li>Verbal summary on the spot</li>
+            </ul>
+          </div>
+          <div class="pricing-card featured">
+            <div class="pricing-badge">Best value</div>
+            <div class="pricing-label">Extended</div>
+            <div class="pricing-rate">$89<span>/hour</span></div>
+            <ul>
+              <li>4-hour bookings only</li>
+              <li>~6% discount vs standard</li>
+              <li>Extra time for deeper checks</li>
+              <li>Optional written notes</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pricing-note">
+          <p><strong>Totals:</strong> 1 hr → $95 · 2 hrs → $190 · 3 hrs → $285 · 4 hrs → $356</p>
+          <p class="small">*Travel beyond local radius or after-hours may add a call-out fee. Max 4 hours.</p>
+        </div>
+        <div class="calculator">
+          <h3>Live price calculator</h3>
+          <div class="calc-row">
+            <label>Duration</label>
+            <div class="duration-pills" id="calcDuration">
+              <button class="pill active" data-hrs="1">1 hr</button>
+              <button class="pill" data-hrs="2">2 hrs</button>
+              <button class="pill" data-hrs="3">3 hrs</button>
+              <button class="pill" data-hrs="4">4 hrs</button>
+            </div>
+          </div>
+          <div class="calc-result">
+            <span>Estimated total</span>
+            <strong id="calcTotal">$95</strong>
+          </div>
+          <p class="calc-note" id="calcNote">Standard hourly rate applies.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MECHANICS -->
+    <section id="mechanics" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Available specialists</h2>
+          <p>Loaded from the live API. Filter by area in a full product.</p>
+        </div>
+        <div class="mechanics-grid" id="mechanicsGrid">
+          <p class="muted">Loading mechanics…</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOK -->
+    <section id="book" class="section section-alt">
+      <div class="container narrow">
+        <div class="section-header">
+          <h2>Book your mechanic</h2>
+          <p id="bookAuthHint">You need to be logged in as a buyer to create a booking.</p>
+        </div>
+        <form id="bookingForm" class="booking-form">
+          <div class="form-group">
+            <label for="serviceType">What do you need?</label>
+            <select id="serviceType" required>
+              <option value="inspect">Pre-purchase inspection + advice</option>
+              <option value="inspect-support">Inspection + negotiation support</option>
+              <option value="support">Mostly support / second opinion</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="duration">Duration</label>
+              <select id="duration" required>
+                <option value="1">1 hour</option>
+                <option value="2">2 hours</option>
+                <option value="3">3 hours</option>
+                <option value="4">4 hours (discounted)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="date">Preferred date</label>
+              <input type="date" id="date" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="time">Preferred time</label>
+              <input type="time" id="time" required />
+            </div>
+            <div class="form-group">
+              <label for="zip">Meeting ZIP / area</label>
+              <input type="text" id="zip" placeholder="e.g. 94107" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="vehicle">Vehicle (year, make, model)</label>
+            <input type="text" id="vehicle" placeholder="2018 Honda Civic EX" required />
+          </div>
+          <div class="form-group">
+            <label for="notes">Notes for the mechanic</label>
+            <textarea id="notes" rows="3" placeholder="Private seller, want undercarriage check…"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="mechanicPref">Preferred mechanic (optional)</label>
+            <select id="mechanicPref">
+              <option value="">Any available specialist</option>
+            </select>
+          </div>
+          <div class="booking-summary">
+            <div><span>Estimated total</span><strong id="formTotal">$95</strong></div>
+            <p class="small" id="formNote">Standard rate. Confirmed when booking is created.</p>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block" id="bookSubmit">Create booking</button>
+          <p class="form-error hidden" id="bookError"></p>
+        </form>
+        <div id="bookingSuccess" class="success-card hidden">
+          <div class="success-icon">✓</div>
+          <h3>Booking created</h3>
+          <p id="successMessage"></p>
+          <button class="btn btn-primary" data-nav="dashboard">View my bookings</button>
+          <button class="btn btn-ghost" id="bookAnother">Book another</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTH -->
+    <section id="auth" class="section">
+      <div class="container narrow">
+        <div class="section-header">
+          <h2 id="authTitle">Log in</h2>
+          <p>Demo accounts use password <code>demo1234</code></p>
+        </div>
+        <div class="auth-tabs">
+          <button class="tab active" data-tab="login">Log in</button>
+          <button class="tab" data-tab="register">Register</button>
+        </div>
+        <form id="loginForm" class="booking-form">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="loginEmail" value="buyer@demo.com" required />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="loginPassword" value="demo1234" required />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Log in</button>
+          <p class="form-error hidden" id="loginError"></p>
+          <p class="muted small" style="margin-top:1rem">
+            Try: <strong>buyer@demo.com</strong> or <strong>marcus@demo.com</strong> / demo1234
+          </p>
+        </form>
+        <form id="registerForm" class="booking-form hidden">
+          <div class="form-group">
+            <label>Full name</label>
+            <input type="text" id="regName" required />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="regEmail" required />
+          </div>
+          <div class="form-group">
+            <label>Password (min 6)</label>
+            <input type="password" id="regPassword" minlength="6" required />
+          </div>
+          <div class="form-group">
+            <label>I am a…</label>
+            <select id="regRole">
+              <option value="buyer">Buyer (looking for a mechanic)</option>
+              <option value="mechanic">Mechanic (providing inspections)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Create account</button>
+          <p class="form-error hidden" id="regError"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>My bookings</h2>
+          <p id="dashSubtitle">Your request history and status.</p>
+        </div>
+        <div id="dashContent">
+          <p class="muted">Loading…</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">🔧</span>
+        <strong>Rent-a-mec</strong>
+        <p>Production-style demo · API + accounts + bookings</p>
+      </div>
+      <div class="footer-links">
+        <a href="#" data-nav="how">How it works</a>
+        <a href="#" data-nav="pricing">Pricing</a>
+        <a href="#" data-nav="mechanics">Mechanics</a>
+        <a href="#" data-nav="book">Book</a>
+      </div>
+      <p class="footer-copy">© 2026 Rent-a-mec · Local production prototype</p>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

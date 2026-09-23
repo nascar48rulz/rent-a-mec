@@ -1,0 +1,15 @@
+# ============================================================
+# Cloudflare Tunnel config (optional alternative to open ports)
+# 1. cloudflared tunnel login
+# 2. cloudflared tunnel create rentamec
+# 3. Put tunnel ID below and run: cloudflared tunnel run
+# 4. In Cloudflare DNS: CNAME your domain → <tunnel-id>.cfargotunnel.com
+# ============================================================
+
+tunnel: YOUR_TUNNEL_ID
+credentials-file: /root/.cloudflared/YOUR_TUNNEL_ID.json
+
+ingress:
+  - hostname: YOUR_DOMAIN
+    service: http://127.0.0.1:3847
+  - service: http_status:404

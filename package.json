@@ -1,0 +1,15 @@
+{
+  "name": "rent-a-mec",
+  "version": "2.0.0",
+  "description": "Rent-a-mec — SQLite + Stripe + HTTPS production prototype",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "seed": "node scripts/seed.js",
+    "reset": "node scripts/seed.js --reset"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}

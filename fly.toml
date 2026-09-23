@@ -1,0 +1,39 @@
+# Rent-a-mec on Fly.io
+# https://fly.io/docs/reference/configuration/
+
+app = "rentamec-demo"
+primary_region = "iad"
+
+[build]
+
+[env]
+  HTTPS = "0"
+  NODE_ENV = "production"
+  PORT = "8080"
+  RAM_DATA_DIR = "/data"
+  RAM_DB_PATH = "/data/rentamec.db"
+  # Set after first deploy (or via fly secrets / fly.toml update):
+  # APP_URL = "https://rentamec-demo.fly.dev"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+  [http_service.concurrency]
+    type = "requests"
+    hard_limit = 100
+    soft_limit = 50
+
+[[vm]]
+  memory = "256mb"
+  cpu_kind = "shared"
+  cpus = 1
+
+[mounts]
+  source = "rentamec_data"
+  destination = "/data"
+  initial_size = "1gb"

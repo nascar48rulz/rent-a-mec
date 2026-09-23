@@ -1,0 +1,31 @@
+# ============================================================
+# Production Caddyfile for Rent-a-mec
+# Replace YOUR_DOMAIN with your real domain (e.g. rentamec.com)
+# Caddy obtains and renews Let's Encrypt certs automatically.
+# ============================================================
+
+YOUR_DOMAIN {
+	# Reverse proxy to the Node app (HTTP on loopback)
+	reverse_proxy 127.0.0.1:3847
+
+	# Security headers
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+		X-Content-Type-Options nosniff
+		X-Frame-Options DENY
+		Referrer-Policy strict-origin-when-cross-origin
+		-Server
+	}
+
+	encode gzip
+
+	log {
+		output file /var/log/caddy/rentamec.log
+		format console
+	}
+}
+
+# Optional: redirect www → apex
+www.YOUR_DOMAIN {
+	redir https://YOUR_DOMAIN{uri} permanent
+}

@@ -1,0 +1,9 @@
+node_modules
+data
+certs
+deploy/caddy
+*.md
+.env
+.env.*
+.git
+tmp

@@ -1,0 +1,18 @@
+# https://www.koyeb.com — free tier Docker deploy
+# koyeb app create rentamec --docker github.com/YOU/rent-a-mec-prod
+name: rentamec-demo
+services:
+  - name: web
+    type: web
+    routes:
+      - path: /
+    ports:
+      - port: 8080
+        protocol: http
+    envs:
+      - key: HTTPS
+        value: "0"
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "8080"

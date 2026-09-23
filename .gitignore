@@ -1,0 +1,13 @@
+node_modules/
+.env
+.env.local
+.env.*.local
+data/*.json
+data/*.db
+data/*.db-*
+/tmp/
+*.log
+certs/*.pem
+.DS_Store
+deploy/caddy
+node_modules/

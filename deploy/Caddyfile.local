@@ -1,0 +1,7 @@
+# Local TLS via Caddy (self-signed / internal CA)
+# Node app runs HTTP on 3847; Caddy serves https://localhost
+
+localhost {
+	reverse_proxy 127.0.0.1:3847
+	tls internal
+}
